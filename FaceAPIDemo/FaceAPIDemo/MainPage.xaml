@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FaceAPIDemo"
+             x:Class="FaceAPIDemo.MainPage">
+    <ScrollView>
+
+        <StackLayout>
+            <Frame HasShadow="True" Margin="15" Padding="5" BackgroundColor="#2196F3">
+                <StackLayout>
+
+                    <Entry x:Name="handle" Placeholder="Enter Twitter handle" TextColor="White" Grid.Column="0"></Entry>
+                    <Button Text="Load Twitter Image" Clicked="LoadTwitterImage"  BackgroundColor="White" TextColor="#2196F3" Grid.Column="1"></Button>
+                    <Frame  x:Name="TwitterImageFrame" HasShadow="True" Margin="5" Padding="0" IsVisible="False">
+                        <StackLayout>
+                            <Image x:Name="TwitterImage" VerticalOptions="FillAndExpand" Aspect="AspectFill" HorizontalOptions="FillAndExpand"></Image>
+                            <Label HorizontalOptions="Center" x:Name="TwitterLabel" TextColor="Black"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+
+            <Frame HasShadow="True" Margin="15,0,15,15" Padding="5" BackgroundColor="#2196F3">
+                <StackLayout>
+                    <Button Text="Take Photo" Clicked="TakePhoto" BackgroundColor="White" TextColor="#2196F3"></Button>
+                    <Frame  x:Name="CameraImageFrame"  HasShadow="True" Margin="5" Padding="0" IsVisible="False">
+
+                        <StackLayout>
+                            <Image x:Name="CameraImage" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"></Image>
+                            <Label HorizontalOptions="Center" x:Name="CameraImageLabel" TextColor="Black"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+
+            <Button Text="Verify"  Margin="15,0,15,0" Clicked="StartVerification"  BackgroundColor="#7CB342" TextColor="White"></Button>
+
+            <Frame x:Name="ResultFrame" HasShadow="True" Margin="15,5,15,5" Padding="15,5,15,5" IsVisible="False">
+                <StackLayout>
+
+                    <Label Text="Results" TextColor="Gray" FontSize="Medium"></Label>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image x:Name="ResultIcon" Scale="0.6"></Image>
+                        <Label x:Name="ResulLabel" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
