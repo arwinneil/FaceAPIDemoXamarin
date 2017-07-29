@@ -192,22 +192,17 @@ namespace FaceAPIDemo
 
             // Request headers.
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
-
-            // Request parameters. A third optional parameter is "details".
-            string requestParameters = "returnFaceId=true";
-
+			
             // Assemble the URI for the REST API Call.
             string uri = uriBase + "verify?" + requestParameters;
 
             HttpResponseMessage response;
 
-            // Request body. Posts a locally stored JPEG image.
+            // Request body. 
             byte[] byteData = Encoding.UTF8.GetBytes("{ \"faceId1\":\"" + faceId1 + "\",\"faceId2\":\"" + faceId2 + "\"}");
 
             using (ByteArrayContent content = new ByteArrayContent(byteData))
             {
-                // This example uses content type "application/octet-stream".
-                // The other content types you can use are "application/json" and "multipart/form-data".
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
                 // Execute the REST API call.
@@ -217,8 +212,7 @@ namespace FaceAPIDemo
                 string contentString = await response.Content.ReadAsStringAsync();
 
                 DeserialiseResults(contentString);
-                //  faceId1 = tempResult.faceId;
-                // Display the JSON response.
+              
             }
         }
 
