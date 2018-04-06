@@ -1,6 +1,7 @@
 # FaceAPIDemoXamarin
 Xamarin - Face API Demo : Verifying if two faces match the same person
 
-The Face API Demo App verifies if a given Twitter profile picture matches a face in a picture taken from camera.
+Enter a Twitter handle and take a selfie! The app will determine if the Twitter profile picture matches the person in the selfie using [Azure Face API](https://azure.microsoft.com/en-us/services/cognitive-services/face/).
+
 
 ![Imgur](http://i.imgur.com/WH3j8gx.png)
